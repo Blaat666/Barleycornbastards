@@ -1,0 +1,335 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Kings', sans-serif !important;
+    color: white; /* Set font color to white */
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 2500px;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    color: rgb(228, 16, 16);
+}
+
+.header-overlay {
+    position: relative;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    max-height: 20%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+.logo-container {
+    position: fixed; /* Container for the fixed logo */
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.logo-image {
+    position: relative;
+    max-height: 80vh;
+    width: auto;
+    filter: invert(100%);
+    margin: 0 auto;
+    animation: shakeright 0.5s ease-in-out 4000ms, shakeleft 0.5s ease-in-out 7000ms;
+}
+
+@keyframes shakeright {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes shakeleft {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slideInRightBrick {
+    from {
+        right: -1520%; /* Start from outside the right edge of the screen */
+    }
+    to {
+        right: -152%; /* End at the original position */
+    }
+}
+
+@keyframes slideInLeftBrick {
+    from {
+        left: -1600%; /* Start from outside the right edge of the screen */
+    }
+    to {
+        left: -160%; /* End at the original position */
+    }
+}
+
+@keyframes slideInLeft100 {
+    from {
+        left: -400%; /* Start from outside the right edge of the screen */
+    }
+    to {
+        left: -100%; /* End at the original position */
+    }
+}
+
+@keyframes slideInLeft60 {
+    from {
+        left: -460%; /* Start from outside the right edge of the screen */
+    }
+    to {
+        left: -60%; /* End at the original position */
+    }
+}
+
+@keyframes slideInRight89 {
+    from {
+        left: 300%; /* Start from outside the right edge of the screen */
+    }
+    to {
+        left: 89%; /* End at the original position */
+    }
+}
+
+@keyframes slideInRight55 {
+    from {
+        left: 300%; /* Start from outside the right edge of the screen */
+    }
+    to {
+        left: 55%; /* End at the original position */
+    }
+}
+
+@keyframes rotate40deg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes rotateMinus25deg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-25deg);
+    }
+}
+
+@keyframes rotate25deg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(25deg);
+    }
+}
+
+@keyframes rotateMinus40deg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes movedown15 {
+    from {
+        top: 1%;
+    }
+    to {
+        top: 15%;
+    }
+}
+
+@keyframes movedown5 {
+    from {
+        top: 1%;
+    }
+    to {
+        top: 5%;
+    }
+}
+
+.nav-item {
+    position: absolute;
+    margin: 0 auto;
+    color: rgb(196, 70, 70);
+    font-size: 2em;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 3s ;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.nav-about {
+    top: 1%;
+    left: 0;
+    right: 4%;
+    animation: shakeright 0.5s ease-in-out 4000ms, shakeleft 0.5s ease-in-out 7000ms;
+}
+
+.nav-shows {
+    top: 1%;
+    left: 89%;
+    right: 0;
+    animation: slideInRight89 2s ease-out forwards 700ms, shakeright 0.5s ease-in-out 4000ms, rotate40deg 1s forwards 4500ms, movedown15 2s forwards 4500ms;
+
+}
+
+.nav-music {
+    top: 1%;
+    left: -60%;
+    right: 0%;
+    animation: slideInLeft60 2s ease-out forwards 500ms, shakeleft 0.5s ease-in-out 7000ms, rotateMinus25deg 1s forwards 7500ms, movedown5 2s forwards 7500ms;
+}
+
+.nav-lyrics {
+    top: 1%;
+    left: 55%;
+    right: 0;
+    animation: slideInRight55 2s ease-out forwards 500ms, shakeright 0.5s ease-in-out 4000ms, rotate25deg 1s forwards 4500ms, movedown5 2s forwards 4500ms;
+}
+
+.nav-contact {
+    top: 1%;
+    left: -100%;
+    right: 0;
+    animation: slideInLeft100 2s ease-out forwards 700ms, shakeleft 0.5s ease-in-out 7000ms, rotateMinus40deg 1s forwards 7500ms, movedown15 2s forwards 7500ms;
+    
+}
+
+.brick-left {
+    position: absolute;
+    max-height: 60vh;
+    width: auto;
+    z-index: 2;
+    top: 20%;
+    left: -1600%;
+    right: 0;
+    margin: 0 auto;
+    animation: slideInLeftBrick 2s forwards 5000ms;
+}
+
+.brick-right {
+    position: absolute;
+    max-height: 60vh;
+    width: auto;
+    z-index: 2;
+    top: 20%;
+    left:0;
+    right: -1520%;
+    margin: 0 auto;
+    animation: slideInRightBrick 2s forwards 2000ms;
+    
+}
+
+html.scrolled .brick-left {
+    filter: opacity(10%);
+}
+
+html.scrolled .brick-right {
+    filter: opacity(10%);
+}
+
+html.scrolled .logo-image {
+    filter: none;
+    filter: opacity(5%);
+    
+}
+
+#brick-left-h1 {
+    position: fixed;
+    z-index: 2;
+    top: 80%;
+    margin: auto 0;
+    left:0;
+    right:28%;
+    margin: 0 auto;
+    color: rgb(103, 10, 10);
+}
+
+#brick-right-h1 {
+    position: fixed;
+    z-index: 2;
+    top: 80%;
+    margin: auto 0;
+    left: 25%;
+    right: 0;
+    margin: 0 auto;
+    color: rgb(103, 10, 10);
+}
+
+#by-h1 {
+    position: fixed;
+    z-index: 2;
+    top: 90%;
+    margin: auto 0;
+    left: 0;
+    right: 3%;
+    margin: 0 auto;
+    color: rgb(103, 10, 10);
+}
+
+.header-title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+}
+
+main {
+    padding: 20px;
+    /* background-color: black; Set background to black */
+    color: white; /* Ensure text color is white */
+    text-align: center;
+}
+
+main h2 {
+    color: rgb(196, 70, 70);
+    font-size: 4em;
+}
+
+main p {
+    color: rgb(148, 104, 84);
+    font-size: 2em;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 10px 0;
+}
