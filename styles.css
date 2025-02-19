@@ -39,7 +39,7 @@ header {
 .header-image {
     width: 100%;
     height: auto;
-    max-height: 20%;
+    max-height: 20%; /* Default max-height for larger screens */
     object-fit: cover;
     filter: brightness(50%);
 }
@@ -59,6 +59,97 @@ header {
     filter: invert(100%);
     margin: 0 auto;
     animation: shakeright 0.5s ease-in-out 4000ms, shakeleft 0.5s ease-in-out 7000ms;
+}
+
+.nav-item {
+    position: absolute;
+    margin: 0 auto;
+    color: rgb(196, 70, 70);
+    font-size: 2em;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 3s;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.nav-about {
+    top: 1%;
+    left: 0;
+    right: 4%;
+    animation: shakeright 0.5s ease-in-out 4000ms, shakeleft 0.5s ease-in-out 7000ms;
+}
+
+.nav-shows {
+    top: 1%;
+    left: 89%;
+    right: 0;
+    animation: slideInRight89 2s ease-out forwards 700ms, shakeright 0.5s ease-in-out 4000ms, rotate40deg 1s forwards 4500ms, movedown15 2s forwards 4500ms;
+}
+
+.nav-music {
+    top: 1%;
+    left: -60%;
+    right: 0%;
+    animation: slideInLeft60 2s ease-out forwards 500ms, shakeleft 0.5s ease-in-out 7000ms, rotateMinus25deg 1s forwards 7500ms, movedown5 2s forwards 7500ms;
+}
+
+.nav-lyrics {
+    top: 1%;
+    left: 55%;
+    right: 0;
+    animation: slideInRight55 2s ease-out forwards 500ms, shakeright 0.5s ease-in-out 4000ms, rotate25deg 1s forwards 4500ms, movedown5 2s forwards 4500ms;
+}
+
+.nav-contact {
+    top: 1%;
+    left: -100%;
+    right: 0;
+    animation: slideInLeft100 2s ease-out forwards 700ms, shakeleft 0.5s ease-in-out 7000ms, rotateMinus40deg 1s forwards 7500ms, movedown15 2s forwards 7500ms;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 600px) {
+    .header-image {
+        max-height: 50%; /* Increase max-height for mobile devices */
+    }
+
+    .nav-item {
+        font-size: 1.2em; /* Decrease font size for mobile devices */
+    }
+
+    .nav-about {
+        top: 5%;
+        left: 5%;
+        right: auto;
+    }
+
+    .nav-shows {
+        top: 10%;
+        left: auto;
+        right: 5%;
+    }
+
+    .nav-music {
+        top: 15%;
+        left: 5%;
+        right: auto;
+    }
+
+    .nav-lyrics {
+        top: 20%;
+        left: auto;
+        right: 5%;
+    }
+
+    .nav-contact {
+        top: 25%;
+        left: 5%;
+        right: auto;
+    }
 }
 
 /* Media queries for tablets and larger screens */
@@ -206,58 +297,6 @@ header {
     to {
         top: 5%;
     }
-}
-
-.nav-item {
-    position: absolute;
-    margin: 0 auto;
-    color: rgb(196, 70, 70);
-    font-size: 2em;
-    text-decoration: none;
-    display: inline-block;
-    transition: transform 3s ;
-}
-
-.nav-item:hover {
-    transform: scale(1.1);
-    text-decoration: underline;
-}
-
-.nav-about {
-    top: 1%;
-    left: 0;
-    right: 4%;
-    animation: shakeright 0.5s ease-in-out 4000ms, shakeleft 0.5s ease-in-out 7000ms;
-}
-
-.nav-shows {
-    top: 1%;
-    left: 89%;
-    right: 0;
-    animation: slideInRight89 2s ease-out forwards 700ms, shakeright 0.5s ease-in-out 4000ms, rotate40deg 1s forwards 4500ms, movedown15 2s forwards 4500ms;
-
-}
-
-.nav-music {
-    top: 1%;
-    left: -60%;
-    right: 0%;
-    animation: slideInLeft60 2s ease-out forwards 500ms, shakeleft 0.5s ease-in-out 7000ms, rotateMinus25deg 1s forwards 7500ms, movedown5 2s forwards 7500ms;
-}
-
-.nav-lyrics {
-    top: 1%;
-    left: 55%;
-    right: 0;
-    animation: slideInRight55 2s ease-out forwards 500ms, shakeright 0.5s ease-in-out 4000ms, rotate25deg 1s forwards 4500ms, movedown5 2s forwards 4500ms;
-}
-
-.nav-contact {
-    top: 1%;
-    left: -100%;
-    right: 0;
-    animation: slideInLeft100 2s ease-out forwards 700ms, shakeleft 0.5s ease-in-out 7000ms, rotateMinus40deg 1s forwards 7500ms, movedown15 2s forwards 7500ms;
-    
 }
 
 .brick-left {
