@@ -5,14 +5,20 @@
   box-sizing: border-box;
 }
 
+/* Base styles */
 body {
     background-color: black;
     font-family: 'Kings', sans-serif !important;
-    color: white; /* Set font color to white */
+    color: white;
     margin: 0;
     padding: 0;
     position: relative;
     min-height: 2500px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 p {
@@ -27,6 +33,7 @@ header {
 
 .header-overlay {
     position: relative;
+    padding: 10px;
 }
 
 .header-image {
@@ -38,7 +45,7 @@ header {
 }
 
 .logo-container {
-    position: fixed; /* Container for the fixed logo */
+    position: fixed;
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
@@ -54,6 +61,29 @@ header {
     animation: shakeright 0.5s ease-in-out 4000ms, shakeleft 0.5s ease-in-out 7000ms;
 }
 
+/* Media queries for tablets and larger screens */
+@media (min-width: 600px) {
+    .logo-container {
+        top: 20px;
+    }
+
+    .logo-image {
+        max-height: 70vh;
+    }
+}
+
+/* Media queries for desktops and larger screens */
+@media (min-width: 1024px) {
+    .logo-container {
+        top: 25px;
+    }
+
+    .logo-image {
+        max-height: 60vh;
+    }
+}
+
+/* Keyframes and animations */
 @keyframes shakeright {
     0% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
@@ -314,8 +344,7 @@ html.scrolled .logo-image {
 
 main {
     padding: 20px;
-    /* background-color: black; Set background to black */
-    color: white; /* Ensure text color is white */
+    color: white;
     text-align: center;
 }
 
